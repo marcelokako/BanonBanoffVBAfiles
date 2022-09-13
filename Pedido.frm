@@ -1,7 +1,7 @@
 VERSION 5.00
 Begin {C62A69F0-16DC-11CE-9E98-00AA00574A4F} Pedido 
    Caption         =   "Registrar Pedido"
-   ClientHeight    =   9210.001
+   ClientHeight    =   10245
    ClientLeft      =   120
    ClientTop       =   465
    ClientWidth     =   15270
@@ -142,9 +142,9 @@ Pedidotexto = ""
 
 If Not Plataforma.Value = "" Or Pagamento.Value = "" Then
 'SE MUDAR QUANTIDADE DE ITENS MUDAR AQUI
-Dim itens(15, 15) As Double
+Dim itens(17, 17) As Double
 
-qtd_lin = 15
+qtd_lin = 17
 alfabeto = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
 itens(1, 1) = T_A.Value
@@ -162,6 +162,8 @@ itens(12, 12) = T_L.Value
 itens(13, 13) = T_M.Value
 itens(14, 14) = T_N.Value
 itens(15, 15) = T_O.Value
+itens(16, 16) = T_P.Value
+itens(17, 17) = T_Q.Value
 
 preco = 0
 If Plataforma.Value = "Ifood" Then
@@ -209,14 +211,6 @@ Select Case botao
 End Select
 
 
-
-End Sub
-
-Private Sub Pagamento_Change()
-
-End Sub
-
-Private Sub Plataforma_Change()
 
 End Sub
 
@@ -323,6 +317,20 @@ If T_O.Value > 0 Then
 T_O.BackColor = RGB(0, 210, 0)
 Else
 T_O.BackColor = RGB(250, 250, 250)
+End If
+End Sub
+Private Sub T_P_Change()
+If T_P.Value > 0 Then
+T_P.BackColor = RGB(0, 210, 0)
+Else
+T_P.BackColor = RGB(250, 250, 250)
+End If
+End Sub
+Private Sub T_Q_Change()
+If T_Q.Value > 0 Then
+T_Q.BackColor = RGB(0, 210, 0)
+Else
+T_Q.BackColor = RGB(250, 250, 250)
 End If
 End Sub
 
